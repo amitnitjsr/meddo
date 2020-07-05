@@ -1,0 +1,20 @@
+.card-style{
+  display: flex;
+    flex-wrap: wrap;
+    margin:4%;
+    margin-left: 7%;
+}
+
+* {
+  box-sizing: border-box;
+}
+.btn-pos{
+  padding-top: 25px;
+}
+
+@media screen and (max-width: 767px) {
+.card-style{
+  margin: 3%;
+}
+
+}
