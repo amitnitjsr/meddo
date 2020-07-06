@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { connect } from 'react-redux';
+import './Navbar.css';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,6 +17,8 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
+        fontSize: '20px',
+        marginLeft: '38%'
     },
 }));
 
@@ -29,8 +32,8 @@ function ButtonAppBar(props) {
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                        Notes {props.list && props.list.length}
+                    <Typography className={classes.title}>
+                        Notes <br /> <span style={{ fontSize: '13px' }}> {props.list && props.list.length} Notes </span>
                     </Typography>
                     <i className="zmdi zmdi-search zmdi-hc-lg"></i>
                 </Toolbar>
