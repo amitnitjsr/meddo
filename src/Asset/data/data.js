@@ -19,8 +19,9 @@ export default [
     id: 3,
     name: 'Shop List',
     listItem: [{ id: 1, item: 'Clothes' }, { id: 2, item: 'Table' },
-
-    { id: 5, item: 'Pen' },],
+    { id: 3, item: 'Pizza' }, { id: 4, item: 'Book' },
+    { id: 5, item: 'Pen' }, { id: 6, item: 'Keyboard' },
+    ],
     title: null,
     description: 'St. John’s Hospital is a Registered Charity under the Charities Acts (Registered Charity No. 20000394) and is administered and managed in accordance with a Hospital Constitution approved by the Charities Regulatory Authority.  The current Hospital Constitution was approved in 2018.  The property is vested in Trustees.',
     date: '7 June',
@@ -45,7 +46,11 @@ export default [
   {
     id: 6,
     name: 'Personal',
-    title: 'There are many variations of passages',
+    listItem: [{ id: 1, item: 'Clothes' }, { id: 2, item: 'Table' },
+    { id: 3, item: 'Pizza' }, { id: 4, item: 'Book' },
+    { id: 5, item: 'Pen' }, { id: 6, item: 'Keyboard' },
+    ],
+    title: null,
     description: 'St. John’s Hospital is a Registered Charity under the Charities Acts (Registered Charity No. 20000394) and is administered and managed in accordance with a Hospital Constitution approved by the Charities Regulatory Authority.  The current Hospital Constitution was approved in 2018.  The property is vested in Trustees.',
     date: '8 June',
     color: 'cornsilk'

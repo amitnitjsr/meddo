@@ -32,14 +32,14 @@ const Home = (props) => {
                             <CardBody>
                                 <CardTitle>{val.name}</CardTitle>
                                 <CardText>{val.title === null ?
-                                    val.listItem.map((val1) => {
-                                        return (
-                                            <ul key={val1.id} style={{ listStyleType: 'number' }}>
+                                    <ol className="ol-style">{
+                                        val.listItem.map((val1) => {
+                                            return (
                                                 <li key={val1.id} >{val1.item}</li>
-                                            </ul>
-                                        )
+                                            )
 
-                                    })
+                                        })}
+                                    </ol>
                                     : val.title}</CardText>
                                 <span>{val.date}</span>
                             </CardBody>
