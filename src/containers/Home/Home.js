@@ -2,15 +2,9 @@ import React from 'react';
 import { Card, CardBody, CardTitle, Col, CardText } from 'reactstrap'
 import './Home.css';
 import { connect } from "react-redux";
-import { Button } from '@material-ui/core';
 
 
 const Home = (props) => {
-
-    const logout = () => {
-        props.signInFun(false);
-        props.history.push('/');
-    }
 
     const detailsHandler = (id) => {
         props.history.push(`./details/${id}`);
@@ -18,9 +12,6 @@ const Home = (props) => {
 
     return (
         <div className="position" >
-            <Col className="col-md-2 col-sm-2 ml-auto btn-pos" >
-                <Button onClick={() => logout()}>Logout</Button>
-            </Col>
 
             <div className="card-style">
                 {props.list && props.list.map((val) => {
@@ -60,21 +51,9 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        signInFun: (isSignedIn) => {
-            dispatch({
-                type: 'signInFun',
-                payload: {
-                    "isSignedIn": isSignedIn
-                }
-            })
-        },
 
-    }
-}
 
 export default connect(
     mapStateToProps,
-    mapDispatchToProps
+    null
 )(Home);

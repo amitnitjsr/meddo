@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { connect } from 'react-redux';
+import { Button } from '@material-ui/core';
 import './Navbar.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,6 +26,10 @@ const useStyles = makeStyles((theme) => ({
 function ButtonAppBar(props) {
     const classes = useStyles();
 
+    const logoutHandler = () => {
+        props.signInFun(false);
+    }
+
     return (
         <div className={classes.root}>
             <AppBar position="static">
@@ -35,7 +40,7 @@ function ButtonAppBar(props) {
                     <Typography className={classes.title}>
                         Notes <br /> <span style={{ fontSize: '13px' }}> {props.list && props.list.length} Notes </span>
                     </Typography>
-                    <i className="zmdi zmdi-search zmdi-hc-lg"></i>
+                    <Button onClick={() => logoutHandler()}>Logout</Button>
                 </Toolbar>
             </AppBar>
         </div>
@@ -48,8 +53,22 @@ const mapStateToProps = state => {
     };
 };
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signInFun: (isSignedIn) => {
+            dispatch({
+                type: 'signInFun',
+                payload: {
+                    "isSignedIn": isSignedIn
+                }
+            })
+        },
+
+    }
+}
+
 export default connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
 )(ButtonAppBar);
 
