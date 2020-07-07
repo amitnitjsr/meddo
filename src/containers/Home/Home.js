@@ -1,11 +1,10 @@
 import React from 'react';
-import { Card, CardBody, CardTitle, Col, CardText } from 'reactstrap'
+import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
 import './Home.css';
 import { connect } from "react-redux";
 
 
 const Home = (props) => {
-
     const detailsHandler = (id) => {
         props.history.push(`./details/${id}`);
     }
@@ -28,7 +27,6 @@ const Home = (props) => {
                                             return (
                                                 <li key={val1.id} >{val1.item}</li>
                                             )
-
                                         })}
                                     </ol>
                                     : val.title}</CardText>
